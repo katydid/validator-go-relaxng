@@ -4,8 +4,8 @@ import (
 	"fmt"
 )
 
-//Parses the simplified RelaxNG Grammar,
-//translates it to relapse and then validates the input xml.
+// Parses the simplified RelaxNG Grammar,
+// translates it to relapse and then validates the input xml.
 func ExampleValidate() {
 	simplifiedRelaxNG := `
 	<grammar>
