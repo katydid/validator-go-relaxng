@@ -12,7 +12,7 @@ test:
 
 .PHONY: fmt
 fmt:
-	gofmt -l -s -w ./...
+	gofmt -l -s -w ./relaxng
 
 .PHONY: js
 js:
