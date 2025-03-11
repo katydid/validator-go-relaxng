@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/katydid/katydid/relapse/ast"
+	"github.com/katydid/validator-go/validator/ast"
 )
 
 func nameConflict(ns []string, name string) bool {
@@ -70,7 +70,6 @@ func translate(g *Grammar) (*ast.Grammar, error) {
 	refs[reserved.ws] = newWhitespace()
 	refs[reserved.any] = newAnyValue()
 	gg := ast.NewGrammar(refs)
-	gg.Format()
 	return gg, nil
 }
 

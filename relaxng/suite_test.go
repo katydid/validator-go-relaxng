@@ -16,9 +16,6 @@ package relaxng
 
 import (
 	"fmt"
-	sdebug "github.com/katydid/katydid/parser/debug"
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/interp"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -26,6 +23,10 @@ import (
 	"strconv"
 	"strings"
 	"testing"
+
+	sdebug "github.com/katydid/parser-go/parser/debug"
+	"github.com/katydid/validator-go/validator/ast"
+	"github.com/katydid/validator-go/validator/interp"
 )
 
 type testCase struct {

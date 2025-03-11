@@ -9,10 +9,10 @@ build:
 	go build ./...
 
 test:
-	go test -v .
+	go test -v ./...
 
 gofmt:
-	gofmt -l -s -w .
+	gofmt -l -s -w ./...
 
 js:
 	(cd play && make)
