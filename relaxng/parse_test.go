@@ -74,7 +74,7 @@ func TestSimpleParseChoice(t *testing.T) {
 		t.Fatal(err)
 	}
 	s := g.String()
-	t.Logf(s)
+	t.Log(s)
 	if !strings.Contains(s, `choice`) {
 		t.Fatalf("expected choice")
 	}
@@ -103,7 +103,7 @@ func TestSimpleParse94(t *testing.T) {
 		t.Fatal(err)
 	}
 	s := g.String()
-	t.Logf(s)
+	t.Log(s)
 	if !strings.Contains(s, `attribute`) {
 		t.Fatalf("expected attribute")
 	}
