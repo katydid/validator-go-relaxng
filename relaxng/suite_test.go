@@ -54,7 +54,7 @@ type testSuite []testCase
 
 func scanFiles() testSuite {
 	cases := make(map[int]testCase)
-	if err := filepath.Walk("../RelaxTestSuite/", func(path string, info os.FileInfo, err error) error {
+	if err := filepath.Walk("../testsuite/RelaxTestSuite/", func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
