@@ -10,6 +10,15 @@ jobs:
       uses: actions/checkout@v4
       with:
         path: gopath/github.com/katydid/validator-go-relaxng
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+    - name: Simplify TestSuite
+      run: |
+        cd gopath/github.com/katydid/validator-go-relaxng
+        make testsuite
     - name: Setup Go
       uses: actions/setup-go@v3
       with:
@@ -26,14 +35,14 @@ jobs:
       run: |
         cd gopath/github.com/katydid/validator-go-relaxng
         make build
-    - name: Test
-      run: |
-        cd gopath/github.com/katydid/validator-go-relaxng
-        make test
     - name: Vet
       run: |
         cd gopath/github.com/katydid/validator-go-relaxng
         make vet
+    - name: Test
+      run: |
+        cd gopath/github.com/katydid/validator-go-relaxng
+        make test
     - name: Diff
       run: |
         cd gopath/github.com/katydid/validator-go-relaxng

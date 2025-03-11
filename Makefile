@@ -8,6 +8,9 @@ all:
 build:
 	go build ./...
 
+vet:
+	go vet ./...
+
 test:
 	go test -v ./...
 
@@ -17,8 +20,9 @@ gofmt:
 js:
 	(cd play && make)
 
-vet:
-	go vet ./...
+testsuite:
+	(cd testsuite && ./simplify.sh)
+	(cd testsuite && ./prettyprint.sh)
 
 diff:
 	git diff --exit-code
