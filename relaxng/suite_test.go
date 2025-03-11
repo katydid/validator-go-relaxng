@@ -204,6 +204,9 @@ func testNumber(filename string) string {
 
 func TestSimpleSuite(t *testing.T) {
 	suite := scanFiles()
+	if len(suite) == 0 {
+		t.Fatal("could not find test suite")
+	}
 	passed := 0
 	incorrectSkipped := 0
 	failed := 0
