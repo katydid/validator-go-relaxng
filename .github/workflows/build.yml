@@ -1,0 +1,40 @@
+name: build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        path: gopath/github.com/katydid/validator-go-relaxng
+    - name: Setup Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.24
+    - name: Fetch dependencies
+      run: |
+        cd gopath/github.com/katydid/validator-go-relaxng
+        go mod download -x
+    - name: env
+      run: env && go env && pwd
+    - name: tree
+      run: tree
+    - name: Build
+      run: |
+        cd gopath/github.com/katydid/validator-go-relaxng
+        make build
+    - name: Test
+      run: |
+        cd gopath/github.com/katydid/validator-go-relaxng
+        make test
+    - name: Vet
+      run: |
+        cd gopath/github.com/katydid/validator-go-relaxng
+        make vet
+    - name: Diff
+      run: |
+        cd gopath/github.com/katydid/validator-go-relaxng
+        make diff

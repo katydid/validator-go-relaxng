@@ -1,0 +1,12 @@
+github.com/awalterschulze/checklicense v1.0.1 h1:7jGGGSkWC/uwlepPUQ8vkm+EZH1nIIn9orQJf9S+hD8=
+github.com/awalterschulze/checklicense v1.0.1/go.mod h1:Tx5mn8+o6YTSeqtM0rIF3ATVEdWmsPy0TxqObvFAF/U=
+github.com/gopherjs/gopherjs v1.17.2 h1:fQnZVsXk8uxXIStYb0N4bGk7jeyTalG/wsZjQ25dO0g=
+github.com/gopherjs/gopherjs v1.17.2/go.mod h1:pRRIvn/QzFLrKfvEz3qUuEhtE/zLCWfreZ6J5gM2i+k=
+github.com/katydid/parser-go v0.7.2 h1:nXkqDoTP4uU0XMLcYmqwsxfrm1ciu2GFdk1T2g0UNcs=
+github.com/katydid/parser-go v0.7.2/go.mod h1:3Oe5QRVSv2L8x7KlZooujIqsZRQXk3htVbzRvXeptzA=
+github.com/katydid/parser-go-json v0.2.1 h1:ctcDeJDY9ldS45syfwkN6+2KNejCBWj+bPY4IGOnOOQ=
+github.com/katydid/parser-go-json v0.2.1/go.mod h1:rEHux6M5gmMK7O6fBXRTRtOCl8W5pQyOcSnN+M4pGA0=
+github.com/katydid/parser-go-xml v0.1.1 h1:W6Xaxwy1Gh231NCM13L4Bdxfi4aYE6JBTdYsvF6TB1s=
+github.com/katydid/parser-go-xml v0.1.1/go.mod h1:I9tZR4C/G6T4QleGfiF1qg5zOMcqp2ASbevDYMvUIdU=
+github.com/katydid/validator-go v0.5.4 h1:MYGjpFl820it8+/h2oqngaHhjGfQNR2LJ4dMFZmyRK8=
+github.com/katydid/validator-go v0.5.4/go.mod h1:E+tP+bOx5KjF44Yi7gz35D/C2qhYxHJAHCQn178uNB4=

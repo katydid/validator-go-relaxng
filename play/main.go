@@ -17,8 +17,9 @@ package main
 import (
 	"encoding/xml"
 	"fmt"
+
 	"github.com/gopherjs/gopherjs/js"
-	. "github.com/katydid/relaxng"
+	. "github.com/katydid/validator-go-relaxng/relaxng"
 )
 
 func main() {

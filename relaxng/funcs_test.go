@@ -17,10 +17,10 @@ package relaxng
 import (
 	"testing"
 
-	"github.com/katydid/katydid/parser/debug"
-	"github.com/katydid/katydid/relapse/ast"
-	c "github.com/katydid/katydid/relapse/combinator"
-	"github.com/katydid/katydid/relapse/compose"
+	"github.com/katydid/parser-go/parser/debug"
+	"github.com/katydid/validator-go/validator/ast"
+	c "github.com/katydid/validator-go/validator/combinator"
+	"github.com/katydid/validator-go/validator/compose"
 )
 
 func TestToken(t *testing.T) {
