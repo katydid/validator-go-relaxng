@@ -54,7 +54,7 @@ type testSuite []testCase
 
 func scanFiles() testSuite {
 	cases := make(map[int]testCase)
-	if err := filepath.Walk("../testsuite/RelaxTestSuite/", func(path string, info os.FileInfo, err error) error {
+	if err := filepath.Walk("../testsuite/RelaxNGTestSuite/", func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
@@ -204,6 +204,9 @@ func testNumber(filename string) string {
 
 func TestSimpleSuite(t *testing.T) {
 	suite := scanFiles()
+	if len(suite) == 0 {
+		t.Fatal("could not find test suite")
+	}
 	passed := 0
 	incorrectSkipped := 0
 	failed := 0
