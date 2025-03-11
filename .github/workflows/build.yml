@@ -15,6 +15,9 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '21'
+    - name: Install xmllint
+      run: |
+        sudo apt install -y libxml2-utils
     - name: Simplify TestSuite
       run: |
         cd gopath/github.com/katydid/validator-go-relaxng
