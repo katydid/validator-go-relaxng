@@ -29,5 +29,4 @@ diff:
 
 .PHONY: checklicense
 checklicense:
-	go get github.com/awalterschulze/checklicense
 	checklicense ./relaxng
