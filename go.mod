@@ -11,6 +11,4 @@ require (
 	github.com/katydid/validator-go v0.5.4
 )
 
-require (
-	github.com/awalterschulze/checklicense v1.0.1 // indirect
-)
+require github.com/awalterschulze/checklicense v1.0.1 // indirect

@@ -19,7 +19,7 @@ import (
 	"fmt"
 
 	"github.com/gopherjs/gopherjs/js"
-	. "github.com/katydid/validator-go/relaxng/relaxng"
+	. "github.com/katydid/validator-go-relaxng/relaxng"
 )
 
 func main() {

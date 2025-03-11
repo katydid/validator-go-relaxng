@@ -17,7 +17,6 @@ package relaxng
 import (
 	"fmt"
 	"regexp"
-	"strconv"
 	"strings"
 
 	"github.com/katydid/validator-go/validator/ast"
@@ -58,6 +57,14 @@ func Token(S funcs.String, C funcs.ConstString) (funcs.Bool, error) {
 	}), nil
 }
 
+func (this *token) HasVariable() bool {
+	return this.hasVariable
+}
+
+func (this *token) ToExpr() *ast.Expr {
+	return ast.NewFunction("token", this.S.ToExpr(), ast.NewStringConst(this.c))
+}
+
 func (this *token) Eval() (bool, error) {
 	s, err := this.S.Eval()
 	if err != nil {
@@ -88,15 +95,7 @@ func (this *token) Compare(that funcs.Comparable) int {
 		}
 		return 0
 	}
-	return strings.Compare(this.String(), that.String())
-}
-
-func (this *token) HasVariable() bool {
-	return this.hasVariable
-}
-
-func (this *token) String() string {
-	return "token(" + this.S.String() + "," + strconv.Quote(this.c) + ")"
+	return this.ToExpr().Compare(that.ToExpr())
 }
 
 func (this *token) Hash() uint64 {
@@ -167,15 +166,15 @@ func (this *whitespace) Compare(that funcs.Comparable) int {
 		}
 		return 0
 	}
-	return strings.Compare(this.String(), that.String())
+	return this.ToExpr().Compare(that.ToExpr())
 }
 
 func (this *whitespace) HasVariable() bool {
 	return this.hasVariable
 }
 
-func (this *whitespace) String() string {
-	return "whitespace(" + this.S.String() + ")"
+func (this *whitespace) ToExpr() *ast.Expr {
+	return ast.NewFunction("whitespace", this.S.ToExpr())
 }
 
 func (this *whitespace) Hash() uint64 {
@@ -225,15 +224,15 @@ func (this *anytext) Compare(that funcs.Comparable) int {
 		}
 		return 0
 	}
-	return strings.Compare(this.String(), that.String())
+	return this.ToExpr().Compare(that.ToExpr())
 }
 
 func (this *anytext) HasVariable() bool {
 	return this.hasVariable
 }
 
-func (this *anytext) String() string {
-	return "anytext(" + this.S.String() + ")"
+func (this *anytext) ToExpr() *ast.Expr {
+	return ast.NewFunction("anytext", this.S.ToExpr())
 }
 
 func (this *anytext) Hash() uint64 {
@@ -308,15 +307,15 @@ func (this *text) Compare(that funcs.Comparable) int {
 		}
 		return 0
 	}
-	return strings.Compare(this.String(), that.String())
+	return this.ToExpr().Compare(that.ToExpr())
 }
 
 func (this *text) HasVariable() bool {
 	return this.hasVariable
 }
 
-func (this *text) String() string {
-	return "text(" + this.S.String() + "," + strconv.Quote(this.c) + ")"
+func (this *text) ToExpr() *ast.Expr {
+	return ast.NewFunction("text", this.S.ToExpr(), ast.NewStringConst(this.c))
 }
 
 func (this *text) Hash() uint64 {
@@ -383,15 +382,15 @@ func (this *list) Compare(that funcs.Comparable) int {
 		}
 		return 0
 	}
-	return strings.Compare(this.String(), that.String())
+	return this.ToExpr().Compare(that.ToExpr())
 }
 
 func (this *list) HasVariable() bool {
 	return this.hasVariable
 }
 
-func (this *list) String() string {
-	return "list(" + this.S.String() + "," + this.Expr.String() + ")"
+func (this *list) ToExpr() *ast.Expr {
+	return ast.NewFunction("list", this.S.ToExpr(), this.Expr.ToExpr())
 }
 
 func (this *list) Hash() uint64 {
