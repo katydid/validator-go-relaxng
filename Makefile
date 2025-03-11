@@ -15,7 +15,7 @@ fmt:
 	gofmt -l -s -w ./relaxng
 
 .PHONY: js
-js:
+genjs:
 	(cd play && make)
 
 .PHONY: testsuite
