@@ -54,3 +54,7 @@ jobs:
       run: |
         cd gopath/github.com/katydid/validator-go-relaxng
         make diff
+    - name: Check license
+      run: |
+        cd gopath/github.com/katydid/validator-go-relaxng
+        make checklicense
