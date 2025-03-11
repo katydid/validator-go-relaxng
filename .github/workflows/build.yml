@@ -32,7 +32,7 @@ jobs:
         go mod download -x
     - name: Install tools
       run: |
-        cd gopath/github.com/katydid/parser-go-xml
+        cd gopath/github.com/katydid/validator-go-relaxng
         go install -x github.com/awalterschulze/checklicense
     - name: env
       run: env && go env && pwd
