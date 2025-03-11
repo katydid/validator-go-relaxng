@@ -30,6 +30,10 @@ jobs:
       run: |
         cd gopath/github.com/katydid/validator-go-relaxng
         go mod download -x
+    - name: Install tools
+      run: |
+        cd gopath/github.com/katydid/validator-go-relaxng
+        go install -x github.com/awalterschulze/checklicense
     - name: env
       run: env && go env && pwd
     - name: tree
@@ -54,3 +58,7 @@ jobs:
       run: |
         cd gopath/github.com/katydid/validator-go-relaxng
         make diff
+    - name: Check license
+      run: |
+        cd gopath/github.com/katydid/validator-go-relaxng
+        make checklicense

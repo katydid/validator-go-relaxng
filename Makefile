@@ -26,3 +26,7 @@ testsuite:
 .PHONY: diff
 diff:
 	git diff --exit-code
+
+.PHONY: checklicense
+checklicense:
+	checklicense ./relaxng
