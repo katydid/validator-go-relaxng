@@ -20,8 +20,5 @@ js:
 vet:
 	go vet ./...
 
-travis:
-	make test
-	make gofmt
-	make vet
+diff:
 	git diff --exit-code
