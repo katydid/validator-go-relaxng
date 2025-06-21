@@ -1,4 +1,4 @@
-#Translates RelaxNG to Katydid
+# Translates RelaxNG to Katydid
 
 Translates Simplified [RelaxNG](http://relaxng.org/) Grammars to the [Katydid](https://github.com/katydid/katydid) Relapse Grammar.
 
